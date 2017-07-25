@@ -41,7 +41,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BinarySearch\Search.cs" />
+    <Compile Include="Countdown\CountdownHelper.cs" />
+    <Compile Include="Countdown\OneCustomer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Countdown\TwoCustomer.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
