@@ -13,9 +13,11 @@ namespace Logic
         /// <param name="element">Element for search.</param>
         /// <param name="comparer">Type for comparison elements.</param>
         /// <returns>Index of element in the array and -1, if element was not found.</returns>
-        public static int BinarySearch<T>(this T[] array, T element, IComparer<T> comparer) 
+        public static int BinarySearch<T>(this T[] array, T element, IComparer<T> comparer = null) 
         {
             CheckArray(array);
+            if (ReferenceEquals(comparer, null)) comparer = Comparer<T>.Default;
+
             if (comparer.Compare(element, array[0]) < 0 || comparer.Compare(element, array[array.Length - 1]) > 0) return -1;
             
             int start = 0;

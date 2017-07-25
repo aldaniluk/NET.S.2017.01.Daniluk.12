@@ -17,7 +17,7 @@ namespace Logic.Tests
         [TestCase(new int[] { 4, 11, 12, 23, 44 }, 22, ExpectedResult = -1)]
         public int BinarySearchTest_IntArray_PositiveTest(int[] array, int element)
         {
-            return Search.BinarySearch<int>(array, element, Comparer<int>.Default);
+            return Search.BinarySearch<int>(array, element);
 
         }
 
@@ -26,7 +26,7 @@ namespace Logic.Tests
         {
             int[] array = null;
             int element = 10;
-            Assert.Throws<ArgumentNullException>(() => Search.BinarySearch<int>(array, element, Comparer<int>.Default));
+            Assert.Throws<ArgumentNullException>(() => Search.BinarySearch<int>(array, element));
         }
 
         [Test]
@@ -34,7 +34,7 @@ namespace Logic.Tests
         {
             int[] array = new int[] { };
             int element = 10;
-            Assert.Throws<ArgumentException>(() => Search.BinarySearch<int>(array, element, Comparer<int>.Default));
+            Assert.Throws<ArgumentException>(() => Search.BinarySearch<int>(array, element));
         }
         #endregion
 
@@ -47,7 +47,7 @@ namespace Logic.Tests
         [TestCase(new string[] { "bbbb", "cccc", "dddd" }, "cddd", ExpectedResult = -1)]
         public int BinarySearchTest_StringArray_PositiveTest(string[] array, string element)
         {
-            return Search.BinarySearch<string>(array, element, Comparer<string>.Default);
+            return Search.BinarySearch<string>(array, element);
         }
 
         [Test]
@@ -55,7 +55,7 @@ namespace Logic.Tests
         {
             string[] array = null;
             string element = "hello";
-            Assert.Throws<ArgumentNullException>(() => Search.BinarySearch<string>(array, element, Comparer<string>.Default));
+            Assert.Throws<ArgumentNullException>(() => Search.BinarySearch<string>(array, element));
         }
 
         [Test]
@@ -63,7 +63,7 @@ namespace Logic.Tests
         {
             string[] array = new string[] { };
             string element = "hello";
-            Assert.Throws<ArgumentException>(() => Search.BinarySearch<string>(array, element, Comparer<string>.Default));
+            Assert.Throws<ArgumentException>(() => Search.BinarySearch<string>(array, element));
         }
         #endregion
     }
